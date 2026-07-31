@@ -1,0 +1,110 @@
+version: 2
+
+models:
+  - name: stg_customer_support_tickets
+    description: >
+      Staging model for customer support tickets.
+      This model cleans and standardizes the raw customer support dataset
+      by renaming columns, converting data types, and preparing the data
+      for downstream analytics models.
+
+    columns:
+
+      - name: ticket_id
+        description: Unique identifier for each customer support ticket.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: customer_name
+        description: Full name of the customer.
+
+      - name: customer_email
+        description: Customer email address.
+
+      - name: customer_age
+        description: Age of the customer.
+        data_tests:
+          - not_null
+
+      - name: customer_gender
+        description: Gender of the customer.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - Male
+                  - Female
+                  - Other
+
+      - name: product_name
+        description: Product associated with the support ticket.
+        data_tests:
+          - not_null
+
+      - name: purchase_date
+        description: Date the customer purchased the product.
+        data_tests:
+          - not_null
+
+      - name: ticket_type
+        description: Category of customer request.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - Refund request
+                  - Technical issue
+                  - Cancellation request
+                  - Product inquiry
+                  - Billing inquiry
+
+      - name: ticket_subject
+        description: Short subject describing the ticket.
+
+      - name: ticket_description
+        description: Full customer issue description.
+
+      - name: ticket_status
+        description: Current status of the ticket.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - Open
+                  - Closed
+                  - Pending Customer Response
+
+      - name: resolution
+        description: Resolution provided for closed tickets.
+
+      - name: ticket_priority
+        description: Priority assigned to the ticket.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - Critical
+                  - High
+                  - Medium
+                  - Low
+
+      - name: ticket_channel
+        description: Channel through which the ticket was submitted.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - Email
+                  - Phone
+                  - Chat
+                  - Social media
+
+      - name: first_response_time
+        description: Timestamp when the first response was sent.
+
+      - name: time_to_resolution
+        description: Timestamp when the ticket was resolved.
+
+      - name: customer_satisfaction_rating
+        description: Customer satisfaction rating after ticket resolution.
