@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Customer dimension table containing unique customer profiles."
+
+    columns:
+
+      - name: customer_id
+        description: "Surrogate key generated from customer attributes."
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_email
+        description: "Customer email address from source system. Email uniqueness is not enforced because source data contains repeated emails."
+        tests:
+          - not_null
+
+      - name: customer_name
+        tests:
+          - not_null
+
+      - name: customer_age
+        tests:
+          - not_null
+
+      - name: customer_gender
+        tests:
+          - not_null
