@@ -1,30 +1,52 @@
 version: 2
 
 models:
+
   - name: dim_customers
-    description: "Customer dimension table containing unique customer profiles."
+    description: "Customer dimension containing unique customer profiles."
 
     columns:
 
       - name: customer_id
-        description: "Surrogate key generated from customer attributes."
+        description: "Unique surrogate key for each customer."
         tests:
           - unique
           - not_null
 
       - name: customer_email
-        description: "Customer email address from source system. Email uniqueness is not enforced because source data contains repeated emails."
+        description: "Customer email address from source system."
         tests:
           - not_null
 
       - name: customer_name
+        description: "Customer full name."
         tests:
           - not_null
 
       - name: customer_age
+        description: "Customer age."
         tests:
           - not_null
 
       - name: customer_gender
+        description: "Customer gender category."
         tests:
+          - not_null
+
+
+  - name: dim_products
+    description: "Product dimension containing unique products purchased by customers."
+
+    columns:
+
+      - name: product_id
+        description: "Unique surrogate key for each product."
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: "Name of the purchased product."
+        tests:
+          - unique
           - not_null
