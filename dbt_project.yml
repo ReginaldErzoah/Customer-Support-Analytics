@@ -1,0 +1,27 @@
+name: customer_support_analytics
+
+version: '1.0'
+
+config-version: 2
+
+profile: customer_support_analytics
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  customer_support_analytics:
+    staging:
+      +materialized: view
+
+    intermediate:
+      +materialized: table
+
+    marts:
+      +materialized: table
