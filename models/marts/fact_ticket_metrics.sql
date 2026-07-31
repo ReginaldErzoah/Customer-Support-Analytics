@@ -74,11 +74,11 @@ final as (
         END AS response_time_quality_flag,
 
 
-        -- Performance metrics
-
+        -- Support resolution duration in hours
         ROUND(
             DATE_DIFF(
-                'hour',
+                'minute',
+
                 CASE
                     WHEN t.first_response_time > t.time_to_resolution
                     THEN t.time_to_resolution
@@ -90,23 +90,11 @@ final as (
                     THEN t.first_response_time
                     ELSE t.time_to_resolution
                 END
-            ),
+
+            ) / 60.0,
+
             2
         ) AS resolution_hours,
-
-
-        ROUND(
-            DATE_DIFF(
-                'hour',
-                t.purchase_date,
-                CASE
-                    WHEN t.first_response_time > t.time_to_resolution
-                    THEN t.time_to_resolution
-                    ELSE t.first_response_time
-                END
-            ),
-            2
-        ) AS first_response_hours,
 
 
         -- Customer experience
