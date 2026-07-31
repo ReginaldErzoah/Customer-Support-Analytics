@@ -40,15 +40,78 @@ final as (
         t.ticket_priority,
         t.ticket_channel,
 
+        -- Product details
+        t.product_name,
+
         -- Dates
         t.purchase_date,
 
-        -- Performance metrics
+        -- Original timestamps
         t.first_response_time,
         t.time_to_resolution,
 
+
+        -- Cleaned timestamps
+        CASE
+            WHEN t.first_response_time > t.time_to_resolution
+            THEN t.time_to_resolution
+            ELSE t.first_response_time
+        END AS cleaned_first_response_time,
+
+
+        CASE
+            WHEN t.first_response_time > t.time_to_resolution
+            THEN t.first_response_time
+            ELSE t.time_to_resolution
+        END AS cleaned_resolution_time,
+
+
+        -- Data quality monitoring
+        CASE
+            WHEN t.first_response_time > t.time_to_resolution
+            THEN 'Corrected'
+            ELSE 'Valid'
+        END AS response_time_quality_flag,
+
+
+        -- Performance metrics
+
+        ROUND(
+            DATE_DIFF(
+                'hour',
+                CASE
+                    WHEN t.first_response_time > t.time_to_resolution
+                    THEN t.time_to_resolution
+                    ELSE t.first_response_time
+                END,
+
+                CASE
+                    WHEN t.first_response_time > t.time_to_resolution
+                    THEN t.first_response_time
+                    ELSE t.time_to_resolution
+                END
+            ),
+            2
+        ) AS resolution_hours,
+
+
+        ROUND(
+            DATE_DIFF(
+                'hour',
+                t.purchase_date,
+                CASE
+                    WHEN t.first_response_time > t.time_to_resolution
+                    THEN t.time_to_resolution
+                    ELSE t.first_response_time
+                END
+            ),
+            2
+        ) AS first_response_hours,
+
+
         -- Customer experience
         t.customer_satisfaction_rating
+
 
     from tickets t
 
