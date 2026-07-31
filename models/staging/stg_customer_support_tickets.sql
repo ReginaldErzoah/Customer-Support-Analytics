@@ -1,9 +1,11 @@
+{{ config(
+    materialized='table'
+) }}
+
 with source_data as (
 
     select *
-    from read_csv_auto(
-        'raw_data/customer_support_tickets.csv'
-    )
+    from {{ source('customer_support', 'customer_support_tickets') }}
 
 ),
 

@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: customer_support
+    schema: raw
+    description: "Raw customer support ticket data source"
+
+    tables:
+      - name: customer_support_tickets
+        description: "Raw customer support ticket records containing customer, product, and ticket information"
