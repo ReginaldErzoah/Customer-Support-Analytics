@@ -415,6 +415,8 @@ Purpose:
 
 Executive summary of customer support operations.
 
+![Support Overview](docs/screenshots/01_overview_page.png)
+
 KPIs:
 
 * Total Tickets
@@ -438,6 +440,8 @@ Purpose:
 
 Analyze operational efficiency.
 
+![Support Performance](docs/screenshots/02_performance_page.png)
+
 KPIs:
 
 * Average First Response Hours
@@ -460,6 +464,8 @@ Visuals:
 Purpose:
 
 Identify product issues and customer behavior.
+
+![Products & Customers](docs/screenshots/03_products_&_customers_page.png)
 
 KPIs:
 
