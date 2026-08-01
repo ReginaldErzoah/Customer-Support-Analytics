@@ -634,5 +634,6 @@ Possible models:
 * Resolution time prediction
 * Customer satisfaction prediction
 
+## LICENSE 
 
 This project is licensed under the MIT License.
