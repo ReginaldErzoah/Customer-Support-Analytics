@@ -411,11 +411,12 @@ The final dashboard contains three pages.
 
 # Page 1: Support Overview
 
+![Support Overview](docs/screenshots/01_overview_page.png)
+
 Purpose:
 
 Executive summary of customer support operations.
 
-![Support Overview](docs/screenshots/01_overview_page.png)
 
 KPIs:
 
@@ -436,11 +437,12 @@ Visuals:
 
 # Page 2: Support Performance
 
+![Support Performance](docs/screenshots/02_performance_page.png)
+
 Purpose:
 
 Analyze operational efficiency.
 
-![Support Performance](docs/screenshots/02_performance_page.png)
 
 KPIs:
 
@@ -461,11 +463,12 @@ Visuals:
 
 # Page 3: Products & Customers
 
+![Products & Customers](docs/screenshots/03_products_&_customers_page.png)
+
 Purpose:
 
 Identify product issues and customer behavior.
 
-![Products & Customers](docs/screenshots/03_products_&_customers_page.png)
 
 KPIs:
 
