@@ -54,41 +54,25 @@ The project answers key business questions such as:
 
 # Technology Stack
 
-## Data Processing
-
-| Technology | Purpose                       |
-| ---------- | ----------------------------- |
-| Python     | Data exploration and analysis |
-| Pandas     | Data manipulation             |
-| DuckDB     | Analytical database           |
-| SQL        | Data transformation           |
-
----
-
-## Analytics Engineering
-
-| Technology | Purpose                           |
-| ---------- | --------------------------------- |
-| dbt        | Data modeling and testing         |
-| dbt-utils  | Utility macros and surrogate keys |
-
----
-
-## Visualization
-
-| Technology | Purpose                            |
-| ---------- | ---------------------------------- |
-| Power BI   | Executive dashboards and reporting |
-
----
-
-## Data Formats
-
-| Format  | Usage                   |
-| ------- | ----------------------- |
-| CSV     | Raw source data         |
-| DuckDB  | Analytical warehouse    |
-| Parquet | BI data exchange format |
+| Area | Technology | Purpose |
+|---|---|---|
+| Data Processing | Python | Data loading, exploration, validation, and analytical processing |
+| Data Processing | Pandas | Data manipulation and exploratory data analysis |
+| Data Processing | NumPy | Numerical computations and data transformations |
+| Database | DuckDB | Local analytical database used as the data warehouse layer |
+| Data Transformation | SQL | Querying, data cleaning, and transformation logic |
+| Analytics Engineering | dbt | Data modeling, testing, documentation, and transformation workflow |
+| Analytics Engineering | dbt-utils | Utility macros including surrogate key generation |
+| Data Quality | dbt Tests | Automated validation of completeness, uniqueness, and business rules |
+| Data Storage | CSV | Raw source data format |
+| Data Storage | Parquet | Optimized analytical file format used for Power BI exports |
+| Business Intelligence | Power BI | Interactive dashboards, KPI reporting, and business insights |
+| Visualization | Matplotlib | Data visualization during exploratory analysis |
+| Visualization | Seaborn | Statistical visualization and analytical charts |
+| Development Environment | Jupyter Notebook | Interactive analysis, experimentation, and documentation |
+| Version Control | Git | Source control and project version management |
+| Version Control | GitHub | Repository hosting and portfolio showcase |
+| Documentation | Markdown | Project documentation and technical reporting |
 
 ---
 
