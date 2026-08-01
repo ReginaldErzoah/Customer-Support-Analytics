@@ -634,28 +634,5 @@ Possible models:
 * Resolution time prediction
 * Customer satisfaction prediction
 
----
-
-# Author
-
-**Reginald Erzoah**
-
-Data Analyst | Business Intelligence Analyst | ML Engineer
-
-Portfolio:
-
-```
-reginalderzoah.github.io
-```
-
-GitHub:
-
-```
-github.com/ReginaldErzoah
-```
-
----
-
-# License
 
 This project is licensed under the MIT License.
