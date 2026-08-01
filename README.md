@@ -69,6 +69,7 @@ The project answers key business questions such as:
 | Business Intelligence | Power BI | Interactive dashboards, KPI reporting, and business insights |
 | Visualization | Matplotlib | Data visualization during exploratory analysis |
 | Visualization | Seaborn | Statistical visualization and analytical charts |
+| Visualization (UI/UX)| Figma | Design of BI report backgrounds |
 | Development Environment | Jupyter Notebook | Interactive analysis, experimentation, and documentation |
 | Version Control | Git | Source control and project version management |
 | Version Control | GitHub | Repository hosting and portfolio showcase |
